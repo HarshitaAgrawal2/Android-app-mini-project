@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_margin="32dp"
+    android:alignmentMode="alignMargins"
+    android:background="@color/grid"
+    android:columnCount="2"
+    android:columnOrderPreserved="true"
+    android:padding="16dp"
+    android:rowCount="3"
+    android:rowOrderPreserved="true"
+    android:useDefaultMargins="true">
+
+    <Button
+        android:id="@+id/add_income_button"
+        android:layout_row="0"
+        android:layout_column="0"
+        android:layout_gravity="fill"
+        android:background="@color/yellow"
+        android:text="Add Income" />
+
+    <Button
+        android:id="@+id/add_expense_button"
+        android:layout_row="0"
+        android:layout_column="1"
+        android:layout_gravity="fill"
+        android:background="@color/yellow"
+        android:text="Add Expense" />
+
+    <Button
+        android:id="@+id/analyse_expense_button"
+        android:layout_row="1"
+        android:layout_column="0"
+        android:layout_gravity="fill"
+        android:background="@color/yellow"
+        android:text="Analyse Expense" />
+
+    <Button
+        android:id="@+id/view_expenses_button"
+        android:layout_row="1"
+        android:layout_column="1"
+        android:layout_gravity="fill"
+        android:background="@color/yellow"
+        android:text="View Expenses" />
+
+    <Button
+        android:id="@+id/quotes"
+        android:layout_row="2"
+        android:layout_column="0"
+        android:layout_gravity="fill"
+        android:background="@color/yellow"
+        android:text="Quotes" />
+
+
+
+</GridLayout>
+
+
+

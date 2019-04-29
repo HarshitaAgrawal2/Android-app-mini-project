@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Expense And Bill</string>
+    <string-array name="category_array">
+        <item>Select expense category</item>
+        <item>Clothing</item>
+        <item>Drinks</item>
+        <item>Education</item>
+        <item>Food</item>
+        <item>Fuel</item>
+        <item>Fun</item>
+        <item>Hospital</item>
+        <item>Hotel</item>
+        <item>Medical</item>
+        <item>Movie</item>
+        <item>Transport</item>
+        <item>Personal</item>
+        <item>Pets</item>
+        <item>Restaurant</item>
+        <item>Shopping</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="income_category_array">
+        <item>Select income category</item>
+        <item>Salary</item>
+        <item>Pocket Money</item>
+        <item>Savings</item>
+        <item>Other</item>
+    </string-array>
+    <string name="title_activity_bluetooth">bluetooth</string>
+    <string name="title_activity_bluetooth_example">BluetoothExample</string>
+</resources>
