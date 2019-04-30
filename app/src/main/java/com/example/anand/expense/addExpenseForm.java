@@ -39,26 +39,31 @@ public class addExpenseForm extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
-        btn = (Button)findViewById(R.id.btn_save);
-        amt = (EditText)findViewById(R.id.amount);
-        desc = (EditText)findViewById(R.id.desc);
-        btnviewAll = (Button)findViewById(R.id.temp);
+        btn = (Button) findViewById(R.id.btn_save);
+        amt = (EditText) findViewById(R.id.amount);
+        desc = (EditText) findViewById(R.id.desc);
+        btnviewAll = (Button) findViewById(R.id.temp);
         myDb = new DatabaseHelper(this);
         btn.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        final String tag = spinner.getSelectedItem().toString();
-                        boolean isInserted = myDb.insertData(amt.getText().toString(),
-                                tag,
-                                desc.getText().toString() );
-                        if(isInserted == true){
-                            btn .setBackgroundColor(Color.BLACK);
-                            btn.setText("Expense saved !");
-                            Toast.makeText(addExpenseForm.this,"Data Inserted",Toast.LENGTH_LONG).show();
+                        if (amt.getText().toString().length() == 0) {
+                            Toast.makeText(addExpenseForm.this, "Enter amount", Toast.LENGTH_LONG).show();
+                        } else {
+                            String tag = spinner.getSelectedItem().toString();
+                            if (tag.equals("Select expense category")) {
+                                tag = "-";
+                            }
+                            boolean isInserted = myDb.insertData(amt.getText().toString(),
+                                    tag,
+                                    desc.getText().toString());
+                            if (isInserted == true) {
+                                btn.setBackgroundColor(Color.BLACK);
+                                btn.setText("Expense saved !");
+                            } else
+                                Toast.makeText(addExpenseForm.this, "Data not Inserted", Toast.LENGTH_LONG).show();
                         }
-                        else
-                            Toast.makeText(addExpenseForm.this,"Data not Inserted",Toast.LENGTH_LONG).show();
                     }
                 }
         );
@@ -67,9 +72,9 @@ public class addExpenseForm extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         Cursor res = myDb.getAllData();
-                        if(res.getCount() == 0) {
+                        if (res.getCount() == 0) {
                             // show message
-                            showMessage("Error","Nothing found");
+                            showMessage("Error", "Nothing found");
                             return;
                         }
 
@@ -82,12 +87,13 @@ public class addExpenseForm extends AppCompatActivity {
                         }
 
                         // Show all data
-                        showMessage("Data",buffer.toString());
+                        showMessage("Data", buffer.toString());
                     }
                 }
         );
     }
-    public void showMessage(String title,String Message){
+
+    public void showMessage(String title, String Message) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setCancelable(true);
         builder.setTitle(title);

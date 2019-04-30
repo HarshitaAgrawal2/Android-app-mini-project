@@ -18,44 +18,36 @@
 
     <Button
         android:id="@+id/add_income_button"
-        android:layout_row="0"
         android:layout_column="0"
         android:layout_gravity="fill"
+        android:layout_row="0"
         android:background="@color/yellow"
-        android:text="Add Income" />
+        android:text="Add  Income" />
 
     <Button
         android:id="@+id/add_expense_button"
-        android:layout_row="0"
         android:layout_column="1"
         android:layout_gravity="fill"
+        android:layout_row="0"
         android:background="@color/yellow"
         android:text="Add Expense" />
 
-    <Button
-        android:id="@+id/analyse_expense_button"
-        android:layout_row="1"
-        android:layout_column="0"
-        android:layout_gravity="fill"
-        android:background="@color/yellow"
-        android:text="Analyse Expense" />
 
     <Button
         android:id="@+id/view_expenses_button"
-        android:layout_row="1"
-        android:layout_column="1"
+        android:layout_column="0"
         android:layout_gravity="fill"
+        android:layout_row="1"
         android:background="@color/yellow"
-        android:text="View Expenses" />
+        android:text="@string/m3" />
 
     <Button
         android:id="@+id/quotes"
-        android:layout_row="2"
-        android:layout_column="0"
+        android:layout_column="1"
         android:layout_gravity="fill"
+        android:layout_row="1"
         android:background="@color/yellow"
         android:text="Quotes" />
-
 
 
 </GridLayout>

@@ -33,10 +33,9 @@ public class ExpenseAdapter extends ArrayAdapter<Expense> {
 
             holder = new ExpenseHolder();
             holder.id = (TextView)row.findViewById(R.id.id);
+            holder.amt = (TextView)row.findViewById(R.id.amt);
             holder.tag = (TextView)row.findViewById(R.id.tag);
             holder.d = (TextView)row.findViewById(R.id.desc);
-            holder.amt = (TextView)row.findViewById(R.id.amt);
-
             row.setTag(holder);
         }
         else
@@ -46,9 +45,9 @@ public class ExpenseAdapter extends ArrayAdapter<Expense> {
 
         Expense exp = data[position];
         holder.id.setText(exp.id);
+        holder.amt.setText(exp.amt);
         holder.tag.setText(exp.tag);
         holder.d.setText(exp.desc);
-        holder.amt.setText(exp.amt);
 
         return row;
     }

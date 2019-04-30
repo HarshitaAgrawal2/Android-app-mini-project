@@ -1,88 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:stretchColumns="0"
+    android:orientation="vertical"
     tools:context=".ViewExpenses">
 
-    <TableRow>
+    <!-- <RadioGroup
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+         <RadioButton
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="Yearly Expense" />
 
-            <RadioGroup
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+         <RadioButton
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="Monthly Expense" />
 
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Yearly Expense" />
+         <RadioButton
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="Weekly Expense" />
 
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Monthly Expense" />
+         <RadioButton
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="Today's Expense" />
+     </RadioGroup> -->
 
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Weekly Expense" />
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Today's Expense" />
-            </RadioGroup>
-        </LinearLayout>
-    </TableRow>
-
-    <TableRow>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
         <TextView
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
             android:background="@color/yellow"
             android:text="Total income:" />
 
         <TextView
             android:id="@+id/income"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
             android:background="@color/colorAccent"
-            android:text="10000000" />
-    </TableRow>
+            android:text="0" />
 
-    <TableRow>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
         <TextView
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
             android:background="@color/yellow"
             android:text="Total Expense:" />
 
         <TextView
             android:id="@+id/expense"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
             android:background="@color/colorAccent"
-            android:text="1000" />
-    </TableRow>
+            android:text="0" />
+    </LinearLayout>
 
-    <TableRow>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
         <TextView
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
             android:background="@color/yellow"
             android:text="Total Savings:" />
 
         <TextView
             android:id="@+id/saving"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
             android:background="@color/colorAccent"
-            android:text="1000" />
-    </TableRow>
+            android:text="0" />
 
-    <TableRow>
+    </LinearLayout>
 
-        <ListView
-            android:id="@+id/listView1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </TableRow>
+    <ListView
+        android:id="@+id/listView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
-</TableLayout>
+</LinearLayout>

@@ -7,18 +7,31 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class ViewExpenses extends AppCompatActivity {
 
     DatabaseHelper myDb;
     private ListView listView1;
+    private TextView expense, saving, income;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_expenses);
+        expense = (TextView) findViewById(R.id.expense);
+        income = (TextView) findViewById(R.id.income);
+        saving = (TextView) findViewById(R.id.saving);
 
         myDb = new DatabaseHelper(this);
+
+        int exp = myDb.getTotalExpense();
+        expense.setText(""+exp);
+        int inc = myDb.getTotalIncome();
+        income.setText(""+inc);
+        int sav = inc - exp;
+        saving.setText(""+sav);
 
         Cursor res = myDb.getAllData();
         if (res.getCount() == 0) {
@@ -26,14 +39,14 @@ public class ViewExpenses extends AppCompatActivity {
             showMessage("Error", "Nothing found");
             return;
         }
-        Expense expense_data[] = new Expense[ res.getCount()];
-        int i=0;
+        Expense expense_data[] = new Expense[res.getCount()];
+        int i = 0;
         while (res.moveToNext()) {
             String id = res.getString(0);
-            String tag = res.getString(1);
-            String desc = res.getString(2);
-            String amt = res.getString(3);
-            expense_data[i++] = new Expense(id, tag, desc, amt);
+            String amt = res.getString(1);
+            String tag = res.getString(2);
+            String desc = res.getString(3);
+            expense_data[i++] = new Expense(id, amt, tag, desc);
         }
         ExpenseAdapter adapter = new ExpenseAdapter(this,
                 R.layout.listview_item_row, expense_data);
